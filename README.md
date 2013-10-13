@@ -9,6 +9,6 @@ TODO
 3. Screen debut et fin
 4. Pofiner le controlle avec la manette
 5. Trouver quelqu'un pour faire:
-	a. le son
-	b. les graphismes
+	1.. le son
+	2.. les graphismes
 
