@@ -1,14 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scenes\script\Player.cs">
-    <Files>
-      <File FileName="..\..\FinalFlash\FinalFlashProject\Assets\Scripts\Enemy.cs" Line="37" Column="3" />
-      <File FileName="..\..\FinalFlash\FinalFlashProject\Assets\Scripts\Bullet.cs" Line="11" Column="22" />
-      <File FileName="Assets\scripts\Enemy.cs" Line="15" Column="15" />
-      <File FileName="Assets\scripts\Bullet.cs" Line="26" Column="24" />
-      <File FileName="Assets\scenes\script\Player.cs" Line="9" Column="13" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
