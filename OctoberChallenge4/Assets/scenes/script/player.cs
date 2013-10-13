@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class player : MonoBehaviour {
+public class Player : MonoBehaviour {
     private float speed;
     private bool touchRight = false;
 	// Use this for initialization
 	void Start () {
-	    speed=3.0F;
+	    speed = 7.0F;
         //rigidbody.
         
 	}

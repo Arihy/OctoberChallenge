@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
 		_transform = transform;
 		speedMax = 1.0f;
-		speedMin = 3.0f;
+		speedMin = 4.0f;
 		moveSpeed = Random.Range(speedMin, speedMax);
 	}
 	
