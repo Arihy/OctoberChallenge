@@ -4,11 +4,10 @@ OctoberChallenge
 TODO
 ----
 
-[x] Afficher le nombre de bullet
-[] Améliorer le spown des ennemis
-[] Implementer le score et le highscore
-[] Screen debut et fin
-[] Pofiner le controlle avec la manette
-[] Trouver quelqu'un pour faire les sons
-[] Trouver quelqu'un pour faire les graphismes
+1. Améliorer le spown des ennemis
+2. Implementer le score et le highscore
+3. Screen debut et fin
+4. Pofiner le controlle avec la manette
+5. Trouver quelqu'un pour faire les sons
+6. Trouver quelqu'un pour faire les graphismes
 
