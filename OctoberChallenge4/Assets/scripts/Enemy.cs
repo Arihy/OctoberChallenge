@@ -11,14 +11,14 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_transform = transform;
-		speedMax = 1.0f;
+		speedMax = 2.0f;
 		speedMin = 4.0f;
 		moveSpeed = Random.Range(speedMin, speedMax);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		_transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+		_transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
 	}
 	
 	void OnTriggerEnter(Collider other)
