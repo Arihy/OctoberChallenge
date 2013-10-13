@@ -5,7 +5,8 @@ using System.Collections.Generic;
 //message qu'on peut envoyer
 public enum eMessageID
 {
-	eLoose
+	eLoose,
+	eScore
 }
 
 public interface IMessageListener

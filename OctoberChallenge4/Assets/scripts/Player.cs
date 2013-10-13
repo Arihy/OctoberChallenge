@@ -48,9 +48,12 @@ public class Player : MonoBehaviour {
 		string tag = other.gameObject.tag;
 		if(tag.Equals("Ammunition"))
 		{
-			//ajouter la balle dans l'inventaire du joueur
 			numberBullet += other.transform.GetComponent<Ammunition>().getNumberBullet();
-			Debug.Log(other.transform.GetComponent<Ammunition>().getNumberBullet());
 		}
+	}
+	
+	public int getNumberBullet()
+	{
+		return numberBullet;
 	}
 }

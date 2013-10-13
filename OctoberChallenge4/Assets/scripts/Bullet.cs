@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 	private float speed;
-	private bool isDropped;
 	
 	private Transform _transform;
 
@@ -11,7 +10,6 @@ public class Bullet : MonoBehaviour {
 	void Start () {
 		_transform = transform;
 		speed = 6.0f;
-		isDropped = true;
 	}
 	
 	// Update is called once per frame
