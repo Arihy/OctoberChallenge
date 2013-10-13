@@ -22,11 +22,7 @@ public class Bullet : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		string tag = other.gameObject.tag;
-		if(tag.Equals("Wall") || tag.Equals("Bullet"))
+		if(tag.Equals("Wall") || tag.Equals("Bullet") || tag.Equals("Enemy"))
 			Destroy(gameObject);
-		if(tag.Equals("Player") && isDropped)
-		{
-			//ajouter la balle dans l'inventaire du joueur
-		}
 	}
 }

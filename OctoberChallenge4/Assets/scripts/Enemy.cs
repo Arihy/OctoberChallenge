@@ -24,7 +24,14 @@ public class Enemy : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		string tag = other.gameObject.tag;
-		if(tag.Equals("Wall") || tag.Equals("Bullet") || tag.Equals("Player"))
+		if(tag.Equals("Wall") || tag.Equals("Bullet"))
+			Destroy(gameObject);
+	}
+	
+	void OnCollisionEnter(Collision other)
+	{
+		string tag = other.gameObject.tag;
+		if(tag.Equals("Player"))
 			Destroy(gameObject);
 	}
 }

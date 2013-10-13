@@ -3,12 +3,16 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
     private float speed;
+	private int numberBullet;
+	private Transform _transform;
+	
+	public Transform bulletPrefab;
 	
 	// Use this for initialization
 	void Start () {
+		_transform = transform;
 	    speed = 7.0F;
-        //rigidbody.
-        
+		numberBullet = 3;
 	}
 	
 	// Update is called once per frame
@@ -16,25 +20,37 @@ public class Player : MonoBehaviour {
         
         float y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         float x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        //transform.Translate(x, y, 0);
-		/*
-        bool errortouch = (Input.GetKey("up") &&  Input.GetKey("right")) || (Input.GetKey("up") &&  Input.GetKey("left")) || (Input.GetKey("down") &&  Input.GetKey("left")) || (Input.GetKey("down") &&  Input.GetKey("right"));   
-        
-        if(!errortouch){
-            if (Input.GetKey("down") || Input.GetKey("up"))
-            {
-                transform.Translate(0, y, 0);
-            }
-            if (Input.GetKey("left") || Input.GetKey("right"))
-            {
-                transform.Translate(x, 0, 0);
-            }
-        }
-        */
 		
 		if(Mathf.Abs(Input.GetAxis("Vertical")) >= Mathf.Abs(Input.GetAxis("Horizontal")))
 			transform.Translate(0, y, 0);
 		else if(Mathf.Abs(Input.GetAxis("Vertical")) < Mathf.Abs(Input.GetAxis("Horizontal")))
 			transform.Translate(x, 0, 0);
+		
+		if((Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 0")) && numberBullet > 0)
+		{
+			Instantiate(bulletPrefab, _transform.position, Quaternion.identity);
+			numberBullet--;
+		}
     }
+	
+	void OnCollisionEnter(Collision other)
+	{
+		string tag = other.gameObject.tag;
+		if(tag.Equals("Enemy"))
+		{
+			Destroy(gameObject);
+			MessageMgr.Instance.NotifyObservers(eMessageID.eLoose, this.gameObject);
+		}
+	}
+	
+	void OnTriggerEnter(Collider other)
+	{
+		string tag = other.gameObject.tag;
+		if(tag.Equals("Ammunition"))
+		{
+			//ajouter la balle dans l'inventaire du joueur
+			numberBullet += other.transform.GetComponent<Ammunition>().getNumberBullet();
+			Debug.Log(other.transform.GetComponent<Ammunition>().getNumberBullet());
+		}
+	}
 }
