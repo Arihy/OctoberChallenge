@@ -6,6 +6,9 @@ public class Player : MonoBehaviour {
 	private int numberBullet;
 	private Transform _transform;
 	
+	public Transform particule;
+	
+	
 	public Transform bulletPrefab;
 	
 	// Use this for initialization
@@ -45,6 +48,7 @@ public class Player : MonoBehaviour {
 		}
 		if(tag.Equals("Enemy"))
 		{
+			//Instantiate(particule, _transform.position, Quaternion.identity);
 			Destroy(gameObject);
 			MessageMgr.Instance.NotifyObservers(eMessageID.eLoose, this.gameObject);
 		}
