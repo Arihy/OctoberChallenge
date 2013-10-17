@@ -13,7 +13,8 @@ public class Enemy : MonoBehaviour {
 		_transform = transform;
 		speedMax = 2.0f;
 		speedMin = 4.0f;
-		moveSpeed = Random.Range(speedMin, speedMax);
+		//moveSpeed = Random.Range(speedMin, speedMax);
+		moveSpeed = 3.0f;
 	}
 	
 	// Update is called once per frame
@@ -24,14 +25,7 @@ public class Enemy : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		string tag = other.gameObject.tag;
-		if(tag.Equals("Wall") || tag.Equals("Bullet"))
-			Destroy(gameObject);
-	}
-	
-	void OnCollisionEnter(Collision other)
-	{
-		string tag = other.gameObject.tag;
-		if(tag.Equals("Player"))
+		if(tag.Equals("Wall") || tag.Equals("Bullet") || tag.Equals("Player"))
 			Destroy(gameObject);
 	}
 }

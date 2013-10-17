@@ -20,7 +20,13 @@ public class Bullet : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		string tag = other.gameObject.tag;
-		if(tag.Equals("Wall") || tag.Equals("Bullet") || tag.Equals("Enemy"))
+		if(tag.Equals("Wall") || tag.Equals("Bullet"))
 			Destroy(gameObject);
+		if(tag.Equals("Enemy"))
+		{
+			MessageMgr.Instance.NotifyObservers(eMessageID.eScore, this.gameObject);
+			Destroy(gameObject);
+		}
+			
 	}
 }

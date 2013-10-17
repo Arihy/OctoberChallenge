@@ -24,8 +24,11 @@ public class SpownManager : MonoBehaviour {
 		if(Time.time > nextSpown)
 		{
 			nextSpown = Time.time + spownRate;
-			int random = Random.Range(0, 10);
-			Instantiate(enemy, spowns[random%5].position, Quaternion.identity);
+			int random = Random.Range(0, 5);
+			Instantiate(enemy, spowns[random].position, Quaternion.identity);
+			int randNbSpown = Random.Range(0, 3);
+			if(randNbSpown == 1)
+				Instantiate(enemy, spowns[(random+(Random.Range(0, 3)))%5].position, Quaternion.identity);
 		}
 		
 		if(Time.time > nextSpownAmmu)

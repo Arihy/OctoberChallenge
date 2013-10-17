@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\menu\TryAgainButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Player.cs">
     <Files>
-      <File FileName="Assets\scripts\menu\MenuStartButton.cs" Line="18" Column="31" />
+      <File FileName="Assets\scripts\Player.cs" Line="21" Column="40" />
+      <File FileName="Assets\scripts\menu\MenuStartButton.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Display.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Enemy.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Bullet.cs" Line="1" Column="1" />
@@ -10,8 +11,7 @@
       <File FileName="Assets\scripts\CameraObs.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\MessageMgr.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\Ammunition.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\menu\TryAgainButton.cs" Line="12" Column="3" />
+      <File FileName="Assets\scripts\menu\TryAgainButton.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
