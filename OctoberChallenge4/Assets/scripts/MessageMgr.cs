@@ -6,7 +6,8 @@ using System.Collections.Generic;
 public enum eMessageID
 {
 	eLoose,
-	eScore
+	eScore,
+	eCancelBonus
 }
 
 public interface IMessageListener

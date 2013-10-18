@@ -3,19 +3,19 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
     private float speed;
-	private int numberBullet;
 	private Transform _transform;
 	
 	public Transform particule;
 	
 	
-	public Transform bulletPrefab;
+	public Transform SimpleBulletPrefab;
+	public Transform HeavyBulletPrefab;
+	
 	
 	// Use this for initialization
 	void Start () {
 		_transform = transform;
 	    speed = 7.0F;
-		numberBullet = 3;
 	}
 	
 	// Update is called once per frame
@@ -32,30 +32,25 @@ public class Player : MonoBehaviour {
 		controller.Move(moveDirection * Time.deltaTime);
 
 		
-		if((Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 0")) && numberBullet > 0)
+		if((Input.GetKeyDown("k") || Input.GetKeyDown("joystick button 0")))
 		{
-			Instantiate(bulletPrefab, _transform.position, Quaternion.identity);
-			numberBullet--;
+			Instantiate(SimpleBulletPrefab, _transform.position, Quaternion.identity);
+		}
+		
+		if((Input.GetKeyDown("j") || Input.GetKeyDown("joystick button 2")))
+		{
+			Instantiate(HeavyBulletPrefab, _transform.position, Quaternion.identity);
 		}
     }
 	
 	void OnTriggerEnter(Collider other)
 	{
 		string tag = other.gameObject.tag;
-		if(tag.Equals("Ammunition"))
-		{
-			numberBullet += other.transform.GetComponent<Ammunition>().getNumberBullet();
-		}
-		if(tag.Equals("Enemy"))
+		if(tag.Equals("SimpleEnemy") || tag.Equals("HeavyEnemy"))
 		{
 			//Instantiate(particule, _transform.position, Quaternion.identity);
 			Destroy(gameObject);
 			MessageMgr.Instance.NotifyObservers(eMessageID.eLoose, this.gameObject);
 		}
-	}
-	
-	public int getNumberBullet()
-	{
-		return numberBullet;
 	}
 }
