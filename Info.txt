@@ -1,0 +1,10 @@
+Utilisation GitHub :
+  - git status // voir toute les modif éffectuer sur GitHub
+  - git add . //pour ajouter toute les modifications, il faut être à la racine
+    git commit -m "le message"
+    git pull
+    git push
+
+
+Image :
+
