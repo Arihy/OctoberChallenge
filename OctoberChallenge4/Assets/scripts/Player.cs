@@ -5,7 +5,7 @@ public class Player : MonoBehaviour {
     private float speed;
 	private Transform _transform;
 	
-	public Transform particule;
+	//public Transform particule;
 	
 	
 	public Transform SimpleBulletPrefab;
