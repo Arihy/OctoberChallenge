@@ -4,10 +4,12 @@ OctoberChallenge
 TODO
 ----
 
-1. Améliorer le spown des ennemis
-2. Implementer le score et le highscore
-3. Screen debut et fin
-4. Pofiner le controlle avec la manette
-5. Trouver quelqu'un pour faire les sons
-6. Trouver quelqu'un pour faire les graphismes
+* ne pas decrementer le combo si le score continue a augmenter,
+* quand le combo arrive a un palier, augmenter le multiplicateur,
+* quand le combo arrive a 0 sur un multiplicateur > 1, decrementer le multiplicateur et mettre le combo au max
+* calculer correctement le score (en fonction du multiplicateur)
+* afficher le highscore a la fin de la partie
+* Améliorer le spown des ennemis
+* Screen debut et fin
+* Trouver quelqu'un pour faire les graphismes
 
