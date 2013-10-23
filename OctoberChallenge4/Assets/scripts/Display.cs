@@ -25,7 +25,7 @@ public class Display : MonoBehaviour, IMessageListener {
 		delayCombo = 3.0f;
 		nextDelay = 0.0f;
 		numTex = 0;
-		numMulti = 2;
+		numMulti = 1;
 		
 		lastScore = score;
 	}
