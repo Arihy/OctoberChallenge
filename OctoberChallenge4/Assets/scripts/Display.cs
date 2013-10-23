@@ -25,7 +25,7 @@ public class Display : MonoBehaviour, IMessageListener {
 		delayCombo = 3.0f;
 		nextDelay = 0.0f;
 		numTex = 0;
-		numMulti = 1;
+		numMulti = 2;
 		
 		lastScore = score;
 	}
@@ -44,9 +44,26 @@ public class Display : MonoBehaviour, IMessageListener {
 			}
 		}
 		if(numTex > 15)
-			numTex = 15;
+		{
+			if(numMulti < 3)
+			{
+				numMulti++;
+				numTex = 0;
+			}
+			else
+				numTex = 15;
+		}
 		if(numTex < 0)
-			numTex = 0;
+		{
+			if(numMulti > 1)
+			{
+				numMulti--;
+				numTex = 15;
+			}
+			else
+				numTex = 0;
+		}
+		multiplicator.renderer.material.SetTexture("_MainTex", multiTexture[numMulti - 1]);
 		comboBar.renderer.material.SetTexture("_MainTex", comboTexture[numTex]);
 	}
 
@@ -54,8 +71,9 @@ public class Display : MonoBehaviour, IMessageListener {
 	{
 		if(_messageID == eMessageID.eScore)
 		{
-			score += 3;
+			score += (3 * numMulti);
 			numTex += 2;
+			nextDelay = Time.time;
 		}
 		if(_messageID == eMessageID.eCancelBonus)
 		{
