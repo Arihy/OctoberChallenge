@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	public virtual void Start () {
 		_transform = transform;
-		moveSpeed = 3.0f;
+		moveSpeed = 4.0f;
 	}
 	
 	// Update is called once per frame
