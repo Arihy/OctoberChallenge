@@ -70,6 +70,7 @@ public class Display : MonoBehaviour, IMessageListener {
 		if(_messageID == eMessageID.eScore)
 		{
 			score += (3 * numMulti);
+			States.score = score;
 			numTex += 2;
 			nextDelay = Time.time;
 		}
@@ -78,6 +79,8 @@ public class Display : MonoBehaviour, IMessageListener {
 			numTex = 0;
 			numMulti = 1;
 		}
+		if(_messageID == eMessageID.eMinusBonus)
+			numTex -= 2;
 	}
 
 	void OnGUI()

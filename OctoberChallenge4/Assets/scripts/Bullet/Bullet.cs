@@ -21,7 +21,10 @@ public class Bullet : MonoBehaviour {
 	{
 		string tag = other.gameObject.tag;
 		if(tag.Equals("Wall"))
+		{
+			MessageMgr.Instance.NotifyObservers(eMessageID.eMinusBonus, this.gameObject);
 			Destroy(gameObject);
+		}
 			
 	}
 }

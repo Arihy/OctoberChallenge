@@ -7,7 +7,8 @@ public enum eMessageID
 {
 	eLoose,
 	eScore,
-	eCancelBonus
+	eCancelBonus,
+	eMinusBonus
 }
 
 public interface IMessageListener

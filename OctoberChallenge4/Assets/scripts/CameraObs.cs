@@ -44,8 +44,7 @@ public class CameraObs : MonoBehaviour, IMessageListener {
 				{
 					name = GUI.TextField(new Rect(10, 10, 200, 20), name, 25);
 					if(Event.current.type == EventType.KeyUp && Event.current.keyCode == KeyCode.Return) {
-						Debug.Log("pressed return");
-						addScore(name, 200);
+						addScore(name, States.score);
 						Application.LoadLevel("gameOver");
 					}
 					
