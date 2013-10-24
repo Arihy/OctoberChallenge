@@ -15,14 +15,13 @@ public class DisplayHightScore : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		string s = "Highscore \n\n";
+		string s = "TOP 10 \n--------------\n";
 		for(int i = 0; i < 10; i++)
 		{
 			if(PlayerPrefs.HasKey(i+"HScore"))
-				s += PlayerPrefs.GetString(i+"HScoreName")+" -- "+PlayerPrefs.GetInt(i+"HScore")+"\n";
+				s += i+1 +"       "+PlayerPrefs.GetInt(i+"HScore")+"       "+PlayerPrefs.GetString(i+"HScoreName")+"\n";
 		}
-		if(PlayerPrefs.HasKey("0HScore"))
-			GUI.Label(new Rect(Screen.width / 3 , 20, 100, 300), s);
+		GUI.Label(new Rect(Screen.width/2 - 100, Screen.height/2 - 200, 300, 400), s);
 	}
 	
 }

@@ -42,8 +42,9 @@ public class CameraObs : MonoBehaviour, IMessageListener {
 			case eEtatID.eLoose:
 				if(Time.time > timeToLoadGameOver + 1.5)
 				{
-					name = GUI.TextArea(new Rect(10, 10, 200, 20), name, 25);
-					if(GUI.Button (new Rect (50,30,50,50), "save")) {
+					name = GUI.TextField(new Rect(10, 10, 200, 20), name, 25);
+					if(Event.current.type == EventType.KeyUp && Event.current.keyCode == KeyCode.Return) {
+						Debug.Log("pressed return");
 						addScore(name, 200);
 						Application.LoadLevel("gameOver");
 					}
@@ -66,7 +67,7 @@ public class CameraObs : MonoBehaviour, IMessageListener {
 		for(int i = 0; i < 10; i++)
 		{
 			if(PlayerPrefs.HasKey(i+"HScore")){
-				if(PlayerPrefs.GetInt(i+"HScore")<newScore){ 
+				if(PlayerPrefs.GetInt(i+"HScore")<=newScore){ 
 		            // new score is higher than the stored score
 		            oldScore = PlayerPrefs.GetInt(i+"HScore");
 		            oldName = PlayerPrefs.GetString(i+"HScoreName");
@@ -79,7 +80,7 @@ public class CameraObs : MonoBehaviour, IMessageListener {
 	         PlayerPrefs.SetInt(i+"HScore",newScore);
 	         PlayerPrefs.SetString(i+"HScoreName",newName);
 	         newScore = 0;
-	         newName = "";
+	         newName = "vide";
 			}
 		}
 	}

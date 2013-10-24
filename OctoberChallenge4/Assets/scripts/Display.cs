@@ -9,7 +9,6 @@ public class Display : MonoBehaviour, IMessageListener {
 	
 	private float delayCombo;
 	private float nextDelay;
-	private int lastScore;
 	
 	public Texture[] comboTexture = new Texture[16];
 	private int numTex;
@@ -27,7 +26,6 @@ public class Display : MonoBehaviour, IMessageListener {
 		numTex = 0;
 		numMulti = 1;
 		
-		lastScore = score;
 	}
 
 	// Update is called once per frame
@@ -78,6 +76,7 @@ public class Display : MonoBehaviour, IMessageListener {
 		if(_messageID == eMessageID.eCancelBonus)
 		{
 			numTex = 0;
+			numMulti = 1;
 		}
 	}
 
