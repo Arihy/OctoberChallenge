@@ -12,7 +12,7 @@ public class SpownManager : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		spownRate = 1.0f;
+		spownRate = 0.8f;
 		nextSpown = 0.0f;
 	}
 	

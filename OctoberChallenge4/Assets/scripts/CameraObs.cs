@@ -42,7 +42,9 @@ public class CameraObs : MonoBehaviour, IMessageListener {
 			case eEtatID.eLoose:
 				if(Time.time > timeToLoadGameOver + 1.5)
 				{
-					name = GUI.TextField(new Rect(10, 10, 200, 20), name, 25);
+					//make game pause
+					Time.timeScale = 0;
+					name = GUI.TextField(new Rect(Screen.width/2, Screen.height/2, 200, 20), name, 25);
 					if(Event.current.type == EventType.KeyUp && Event.current.keyCode == KeyCode.Return) {
 						addScore(name, States.score);
 						Application.LoadLevel("gameOver");
