@@ -11,6 +11,8 @@ public class TryAgainButton : MonoBehaviour {
 		}
 		if(Input.GetKeyDown("joystick button 0"))
 		{
+			Time.timeScale = 1;
+			States.score = 0;
 			Application.LoadLevel("scene1");
 		}
 	}
